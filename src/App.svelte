@@ -1,5 +1,6 @@
 <script>
-    import { fetch } from './libs/fetch';
+    // import { fetch } from './libs/fetch';
+    import Fetch from "./components/Fetch.svelte";
     import TodoItems from './components/TodoItems.svelte'; 
 
     // var payload = {};
@@ -28,5 +29,13 @@
    <div class="bg-gray-100 pt-24 lg:pt-0">
       <TodoItems />
     </div>
+    <!-- <Fetch url="https://jsonplaceholder.typicode.com/todos" let:data>
+          <h1>A list of todos</h1>
+            <ul>
+                {#each data as link}
+                <li>{link.title}</li>
+                {/each}
+            </ul>
+    </Fetch> -->
 </div>
 
