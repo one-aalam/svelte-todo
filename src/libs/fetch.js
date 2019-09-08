@@ -1,5 +1,5 @@
 "use strict";
-window.fetch = fetch;
+// window.fetch = fetch;
 
 function Response(response) {
   this.response = response.response;
