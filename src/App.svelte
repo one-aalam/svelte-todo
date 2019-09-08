@@ -1,6 +1,6 @@
 <script>
     import { fetch } from './libs/fetch';
-    import TodoItems from './components/TodoItems.svelte'
+    import TodoItems from './components/TodoItems.svelte'; 
 
     // var payload = {};
     // var requestInit = {
@@ -24,5 +24,9 @@
     //     console.log(error);
     // });
 </script>
+<div>
+   <div class="bg-gray-100 pt-24 lg:pt-0">
+      <TodoItems />
+    </div>
+</div>
 
-<TodoItems />

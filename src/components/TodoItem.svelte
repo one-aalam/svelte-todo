@@ -56,7 +56,7 @@
 </style>
 
 
-<div class="todo-item">
+<div class="todo-item max-w-sm w-full lg:max-w-full lg:flex bg-white px-3 py-1 shadow-md rounded">
     <div class="todo-item-left" transition:fly="{{ y: 20, duration: 300 }}">
         <input type="checkbox" bind:checked={completed} on:change={toggleComplete}>
         <div class="todo-item-label" class:completed={completed}>{title}</div>
