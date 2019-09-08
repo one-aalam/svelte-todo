@@ -120,6 +120,7 @@
 
 
 <div class="container">
+    <div class="bg-black">test</div>
 
     <a href="https://codingthesmartway.com" target="_blank"><img src={'/img/CTSWLogo.png'} alt="svelte logo" class="logo"></a>
 
