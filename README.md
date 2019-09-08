@@ -59,3 +59,7 @@ Then, from within your project folder:
 npm run build
 surge public
 ```
+
+####Note
+Please do a `yarn import` before running `yarn dev` if you prefer `yarn` as a package manager. Due to the missing
+`audit` commands in yarn, `npm` is primarily used and `yarn.lock` might not be in sync
