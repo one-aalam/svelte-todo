@@ -1,4 +1,6 @@
 <script>
+    import Icon  from 'svelte-awesome/components/Icon.svelte';
+    import { refresh } from 'svelte-awesome/icons';
     import TodoItem from './TodoItem.svelte';
 
     let newTodoTitle ='';
@@ -102,7 +104,7 @@
             </div>
         {/each}
     </div>
-
+    <Icon data={refresh} scale="3"></Icon>
 
     <div class="flex items-center justify-between">
         <div><label><input class="inner-container-input" type="checkbox" on:change={checkAllTodos}>Check All</label></div>

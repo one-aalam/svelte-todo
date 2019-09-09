@@ -15,7 +15,8 @@
     "tailwindcss": "^1.1.2"
   },
   "dependencies": {
-    "sirv-cli": "^0.4.4"
+    "sirv-cli": "^0.4.4",
+    "svelte-awesome": "^2.2.0"
   },
   "scripts": {
     "build": "npm run build:tailwind && rollup -c",
