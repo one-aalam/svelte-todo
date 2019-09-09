@@ -1,6 +1,10 @@
 <script>
     // import { fetch } from './libs/fetch';
-    import Fetch from "./components/Fetch.svelte";
+    import { Router, Route } from "svelte-routing";
+    import NavLink from "./components/NavLink.svelte";
+    import About from "./pages/About.svelte";
+    import Home from "./pages/Home.svelte";
+    // import Fetch from "./components/Fetch.svelte";
     import TodoItems from './components/TodoItems.svelte'; 
 
     // var payload = {};
@@ -24,11 +28,21 @@
     // .catch(function(error) {
     //     console.log(error);
     // });
+    export let url = "";
 </script>
-<div>
-   <div class="bg-gray-100 pt-24 lg:pt-0">
-      <TodoItems />
-    </div>
+
+<Router url="{url}">
+  <nav>
+    <NavLink to="/">Home</NavLink>
+    <NavLink to="about">About</NavLink>
+  </nav>
+  <div>
+    <Route path="about" component="{About}" />
+    <!-- <Route path="blog/*" component="{Blog}" /> -->
+    <Route path="/" component="{Home}" />
+  </div>
+</Router>
+
     <!-- <Fetch url="https://jsonplaceholder.typicode.com/todos" let:data>
           <h1>A list of todos</h1>
             <ul>
@@ -37,5 +51,4 @@
                 {/each}
             </ul>
     </Fetch> -->
-</div>
 
