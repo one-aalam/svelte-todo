@@ -1,7 +1,12 @@
 # Svelte ToDo
-A ToDo App + Svelte starter pack for Svelte 3/Rollup:
-
+A ToDo App + Svelte starter pack for Svelte 3/Rollup.
 Available at: https://hopeful-hugle-81a197.netlify.com
+
+For Typescript/VS Code support checkout `feature/add-ts-support` with
+- Typescript support inside Svelte components with [svelte-ts-preprocess](https://github.com/PaulMaly/svelte-ts-preprocess)
+- Visual Studio Code support with [svelte-vscode](https://github.com/UnwrittenFun/svelte-vscode) extension (via `svelte.config.js`)
+
+>TS Support in a Svelte app still has [some](https://github.com/sveltejs/svelte/issues/1639) [moving](https://github.com/sveltejs/svelte/issues/2746) [pieces](https://github.com/sveltejs/sapper/issues/760)
 
 ### Get started
 
