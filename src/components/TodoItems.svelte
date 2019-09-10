@@ -1,11 +1,12 @@
-<script>
+<script lang="ts">
     import TodoItem from './TodoItem.svelte';
+    import { ITodoItem, TodoItemState } from '../types'
 
     let newTodoTitle ='';
     let currentFilter = 'all';
     let nextId = 4;
 
-    let todos = [
+    let todos: ITodoItem[] = [
         {
             id: 1,
             title: 'My first todo',
@@ -23,7 +24,9 @@
         },
     ];
 
-    function addTodo(event) {
+
+
+    function addTodo(event: KeyboardEvent) {
         if (event.key === 'Enter') {
             todos = [...todos, {
                 id: nextId,
@@ -36,12 +39,12 @@
         }
     }
 
-    function checkAllTodos(event) {
-        todos.forEach(todo => todo.completed = event.target.checked);
+    function checkAllTodos(event: MouseEvent) {
+        todos.forEach(todo => todo.completed = true);
         todos = todos;
     }
 
-    function updateFilter(newFilter) {
+    function updateFilter(newFilter: string) {
         currentFilter = newFilter;
     }
 
@@ -49,11 +52,11 @@
         todos = todos.filter(todo => !todo.completed);
     }
 
-    function handleDeleteTodo(event) {
+    function handleDeleteTodo(event:any) {
         todos = todos.filter(todo => todo.id !== event.detail.id);
     }
 
-    function handleToggleComplete(event) {
+    function handleToggleComplete(event:any) {
         const todoIndex = todos.findIndex(todo => todo.id === event.detail.id);
         const updatedTodo = { ...todos[todoIndex], completed: !todos[todoIndex].completed};
         todos = [
@@ -63,13 +66,20 @@
         ];
     }
 
-    // computed
-    $: todosRemaining = filteredTodos.filter(todo => !todo.completed).length;
-    $: filteredTodos = currentFilter === 'all' ? todos : currentFilter === 'completed' 
+    // typescript: reactive declarations would require let
+    // @ts-ignore // typescript: ignore error "A label is not allowed here" as the `$: change/effect` surprises it a bit!
+    $: let filteredTodos = currentFilter === TodoItemState.all ? todos : currentFilter === TodoItemState.completed
         ? todos.filter(todo => todo.completed)
         : todos.filter(todo => !todo.completed)
-</script>
+    // @ts-ignore
+    $: let todosRemaining = filteredTodos.filter(todo => !todo.completed).length;
 
+    // here there could be template tags e.g. svelteCSS
+    export const css = /* css */``
+
+    // here there could be template tags e.g. svelteHTML
+    export const html = /* html */``
+</script>
 <style>
     .container {
         max-width: 800px;

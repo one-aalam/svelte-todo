@@ -1,22 +1,22 @@
-<script>
+<script lang="ts">
     import { createEventDispatcher } from 'svelte';
     import { fly } from 'svelte/transition';
 
-    export let id;
-    export let title;
-    export let completed;
+    export let id: number;
+    export let title: string;
+    export let completed: string;
 
     const dispatch = createEventDispatcher();
 
     function deleteTodo() {
         dispatch('deleteTodo', {
-            id: id
+            id
         });
     }
 
     function toggleComplete() {
         dispatch('toggleComplete', {
-            id: id
+            id
         });
     }
 </script>

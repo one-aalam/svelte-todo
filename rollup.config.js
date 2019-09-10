@@ -4,6 +4,7 @@ import commonjs from 'rollup-plugin-commonjs';
 import livereload from 'rollup-plugin-livereload';
 import { terser } from 'rollup-plugin-terser';
 import typescript from "rollup-plugin-typescript2";
+import ts from "typescript";
 
 import {
 	createEnv,
@@ -18,7 +19,8 @@ const compilerOptions = readConfigFile(env);
 const opts = {
   env,
   compilerOptions: {
-    ...compilerOptions,
+	...compilerOptions,
+	moduleResolution: ts.ModuleResolutionKind.NodeJs,
     allowNonTsExtensions: true
   }
 };
@@ -50,6 +52,7 @@ export default {
 		// consult the documentation for details:
 		// https://github.com/rollup/rollup-plugin-commonjs
 		resolve({
+			extensions: ['.mjs', '.js', '.ts', '.json'],
 			browser: true,
 			dedupe: importee => importee === 'svelte' || importee.startsWith('svelte/')
 		}),

@@ -1,20 +1,17 @@
+# Svelte ToDo
+A ToDo App + Svelte starter pack for Svelte 3/Rollup/Typescript/Visual Studio Code:
 
-
----
-
-# svelte todo
-A very plain and simple todo app
+- Typescript support inside Svelte components with [svelte-ts-preprocess](https://github.com/PaulMaly/svelte-ts-preprocess)
+- Visual Studio Code support with [svelte-vscode](https://github.com/UnwrittenFun/svelte-vscode) extension (via `svelte.config.js`)
+- Jest for test for .js/.ts/.svelte
 
 Available at: https://hopeful-hugle-81a197.netlify.com
 
+### Get started
 
-## Get started
-
-Install the dependencies...
-
-```bash
-cd svelte-app
-npm install
+```
+git clone https://github.com/one-aalam/svelte-todo.git
+cd svelte-todo && rm -rf .git && npm install
 ```
 
 ...then start [Rollup](https://rollupjs.org):
