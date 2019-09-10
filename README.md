@@ -1,20 +1,13 @@
-
-
----
-
-# svelte todo
-A very plain and simple todo app
+# Svelte ToDo
+A ToDo App + Svelte starter pack for Svelte 3/Rollup:
 
 Available at: https://hopeful-hugle-81a197.netlify.com
 
+### Get started
 
-## Get started
-
-Install the dependencies...
-
-```bash
-cd svelte-app
-npm install
+```
+git clone https://github.com/one-aalam/svelte-todo.git
+cd svelte-todo && rm -rf .git && npm install
 ```
 
 ...then start [Rollup](https://rollupjs.org):
